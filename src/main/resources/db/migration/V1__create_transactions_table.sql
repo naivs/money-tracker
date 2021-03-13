@@ -1,0 +1,7 @@
+CREATE TABLE transactions (
+    hash INT PRIMARY KEY,
+	amount DECIMAL(10, 2) NOT NULL,
+	type CHAR(10) NOT NULL,
+	note VARCHAR(255) NOT NULL,
+	timestamp SMALLDATETIME NOT NULL
+);
