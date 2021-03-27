@@ -25,7 +25,7 @@ pipeline {
             steps {
                 echo 'Run..'
                 withCredentials([string(credentialsId: 'finansistApiKey', variable: 'API_KEY'), string(credentialsId: 'finansistBotName', variable: 'NAME')]) {
-                    sh returnStdout: true, script: 'docker run -d -p 8081:8080 --env BOT_API_KEY=${API_KEY} --env BOT_NAME=${NAME} --name money-tracker money-tracker'
+                    sh returnStdout: true, script: 'docker run -d -p 8083:8080 --env BOT_API_KEY=${API_KEY} --env BOT_NAME=${NAME} --name money-tracker money-tracker'
                 }
             }
         }
