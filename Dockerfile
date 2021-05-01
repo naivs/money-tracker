@@ -12,7 +12,7 @@ RUN gradle clean assemble
 FROM adoptopenjdk/openjdk15:jre-15.0.2_7-alpine
 
 COPY --from=builder /home/money-tracker/build/libs/money-tracker-0.0.1-SNAPSHOT.jar /money-tracker/money-tracker.jar
-VOLUME /money-tracker
+VOLUME /money-tracker/database
 
 WORKDIR /money-tracker
 ENTRYPOINT java -jar money-tracker.jar
